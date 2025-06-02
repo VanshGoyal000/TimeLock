@@ -1,6 +1,5 @@
 # TimeLock Vault - Decentralized Inheritance System on Bitcoin
 
-![TimeLock Vault Logo](./frontend/public/logo.png)
 
 A decentralized inheritance and time-locked asset vault system built on Bitcoin using Stacks blockchain and Clarity smart contracts.
 
