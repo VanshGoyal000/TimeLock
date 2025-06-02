@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0ea5e9;
+  --secondary: #d946ef;
+  --success: #10b981;
+  --danger: #ef4444;
+  --dark: #1a202c;
+  --stacks-blue: #5546FF;
+  --stacks-purple: #A900FF;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+  min-height: 100vh;
+  color: #1a202c;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Enhanced component styles */
+.card {
+  @apply bg-white rounded-xl shadow-card p-6 transition-all duration-300;
+}
+
+.card:hover {
+  @apply shadow-lg;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-all duration-200 inline-flex items-center justify-center;
+}
+
+.btn-primary {
+  @apply bg-primary-600 text-white hover:bg-primary-700 shadow-button;
+}
+
+.btn-secondary {
+  @apply bg-secondary-600 text-white hover:bg-secondary-700 shadow-button;
+}
+
+.btn-danger {
+  @apply bg-vault-danger text-white hover:bg-red-600 shadow-button;
+}
+
+.btn-outline {
+  @apply border border-gray-300 bg-white text-gray-700 hover:bg-gray-50;
+}
+
+.btn-lg {
+  @apply px-6 py-3 text-lg;
+}
+
+.btn-icon {
+  @apply inline-flex items-center gap-2;
+}
+
+.btn-gradient {
+  @apply bg-gradient-to-r from-stacks-blue to-stacks-purple text-white hover:opacity-90;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-stacks-blue to-stacks-purple bg-clip-text text-transparent;
+}
+
+.loading-screen {
+  @apply flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-50 to-gray-100;
+}
+
+.loading-logo {
+  @apply mb-4 bg-gradient-to-r from-stacks-blue to-stacks-purple p-4 rounded-xl shadow-md;
+}
+
+.loading-icon {
+  @apply text-white text-3xl animate-pulse-slow;
+}
+
+.empty-state {
+  @apply flex flex-col items-center justify-center py-12 px-4 text-center;
+}
+
+.empty-icon {
+  @apply text-5xl mb-4 text-gray-400;
+}
+
+.page-header {
+  @apply mb-8;
+}
+
+.page-header h1 {
+  @apply text-3xl font-bold mb-2;
+}
+
+.page-subtitle {
+  @apply text-gray-600;
+}
+
+.dashboard-actions {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8;
+}
+
+.action-card {
+  @apply card flex flex-col items-center text-center p-6 hover:translate-y-[-5px];
+}
+
+.action-icon {
+  @apply w-16 h-16 rounded-full bg-gradient-to-r from-stacks-blue to-stacks-purple flex items-center justify-center text-white text-2xl mb-4;
+}
+
+.welcome-banner {
+  @apply card bg-gradient-to-r from-stacks-blue to-stacks-purple text-white p-8 text-center;
+}
+
+.welcome-banner h1 {
+  @apply text-3xl font-bold mb-2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md mb-4 shadow-input focus:ring-2 focus:ring-primary-300 focus:border-primary-300 focus:outline-none;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gray-400 dark:hover:bg-gray-500 transition-all duration-200;
+}
+
+/* Page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
